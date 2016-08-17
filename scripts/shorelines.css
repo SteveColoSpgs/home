@@ -1,0 +1,118 @@
+body{
+	background-color: white;
+}
+
+#index {
+    width: 30%;
+    height: 100%;
+	border-color: #115511;
+	overflow: scroll;
+	top: 0%;
+	position: absolute;
+	left: 0;
+	overflow-x: hidden;
+}
+
+#mapArea {
+	position: absolute;
+	left: 30%;
+	top: 0%;
+	height: 100%;
+	width: 40%;
+    border: 1px solid #115511;
+}
+
+#infoLabel {
+	position: absolute;
+	left:70%;
+	top: 0%;
+	height: 4%;
+	width: 30%;
+	border-color: #115511;
+	vertical-align: middle;
+    text-align:left;
+	font: 12pt sans-serif;
+    color:white;
+	background-color: #115511;
+    border: 1px solid black;
+}
+
+#infoArea {
+	padding: 4px;
+	position: absolute;
+	left:70%;
+	top: 4%;
+	height: 52%;
+	width: 30%;
+	overflow: scroll;
+	overflow-x: hidden;
+	border-color: #115511;
+	font: 10pt sans-serif;
+	background-image: url("../images/dunveganoceras.png");
+}
+
+#lithoLabel {
+	position: absolute;
+	left:70%;
+	top: 60%;
+	height: 4%;
+	width: 30%;
+	vertical-align: middle;
+    text-align:left;
+	font: 12pt sans-serif;
+    color:white;
+	background-color: #115511;
+    border: 1px solid black;
+}
+
+#lithoArea {
+	padding: 4px;
+	position: absolute;
+	left:70%;
+	top: 64%;
+	height: 36%;
+	width: 30%;
+	border-color: #115511;
+	overflow: scroll;
+	overflow-x: hidden;
+	font: 10pt sans-serif;
+	background-image: url("../images/tepeeButtes.png");
+}
+
+footer {
+	position: absolute;
+	top: 620px;
+	width: 100%;
+    background-color:blue;
+    text-align:center;
+	font: 12pt "Trebuchet MS", sans-serif;
+    background-color:blue;
+    color:white;
+}
+
+table {
+    border-collapse: collapse;
+	font-family: sans-serif;
+	font-size: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.species {
+	font-style: italic;
+}
+
+.imgLink {
+	cursor: pointer;
+}
+
+.mIcon {
+    cursor: pointer;
+}
+
+.galleryDiv {
+	height: 0px;
+	width: 0px;
+}
