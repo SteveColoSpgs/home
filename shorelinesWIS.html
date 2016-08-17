@@ -1,0 +1,488 @@
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Western Interior Seaway Shorelines</title>
+
+<!-- Shorelines -->
+<link href="scripts/shorelines.css" rel="stylesheet"/>
+
+<!-- UI api -->
+<link href="scripts/jquery-ui.css" rel="stylesheet"/>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/jquery-ui.js"></script>
+
+<!-- lightbox api -->
+<link rel="stylesheet" type="text/css" href="scripts/jquery.fancybox.css?v=2.1.5" media="screen" />
+<script type="text/javascript" src="scripts/jquery.fancybox.js?v=2.1.5"></script>
+
+<!-- map api -->
+<link href="scripts/leaflet.css" rel="stylesheet"/>
+<script src="scripts/leaflet.js"></script>
+</head>
+
+</head>
+<body>
+
+<div id="index">
+    <table style="width:100%" border="1">
+	<thead><tr><th>Sub-<br/>stages</th><th>Western Interior Ammonite<br/>Taxon Range Zones</th><th>Age<br/>Ma</th></tr></thead>
+	<tr><td colspan="3" align="center" style="background-color: #aaaaff">Maastrichtian: 70.6 +/- 0.6 to 65.5 +/- 0.3</td></tr>
+	<tr><td rowspan="3">Upper</td><td class="species">Jeletzkytes nebrascensis</td><td>&nbsp;</td></tr>
+	<tr><td class="species">Hoploscaphites nicolletii</td><td>&nbsp;</td></tr>
+	<tr><td class="species">Hoploscaphites birkelundae</td><td>&nbsp;</td></tr>
+
+	<tr><td rowspan="3">Lower</td>
+	    <td id="bclinolobatusCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Baculites clinolobatus</td>
+	    <td align="right">
+		<span id='bclinolobatusPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('bclinolobatusImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('bclinolobatus');"/>
+		</td></tr></table></td><td>69.59 +/- 0.36</td></tr>
+
+	<tr><td id="bgrandisCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Baculites grandis</td>
+	    <td align="right">
+		<span id='bgrandisPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('bgrandisImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('bgrandis');"/>
+		</td></tr></table></td><td>70.00 +/- 0.45</td></tr>
+
+	<tr><td id="bbaculusCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Baculites baculus</td>
+	    <td align="right">
+		<span id='bbaculusPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('bbaculusImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('bbaculus');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+	
+	<tr><td colspan="3" align="center" style="background-color: #aaaaff">Campanian: 83.5 +/- 0.7 to 70.6 +/- 0.6</td></h3>
+	<tr><td rowspan="9">Upper<br/></td>
+	    <td class="species">Baculites eliasi</td><td>71.98 +/- 0.31</td></tr>
+	
+	<tr><td id="bjenseniCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Baculites jenseni</td>
+	    <td align="right">
+		<span id='bjenseniPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('bjenseniImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('bjenseni');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+
+	<tr><td id="breesideiCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Baculites reesidei</td>
+	    <td align="right">
+		<span id='breesideiPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('breesideiImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('breesidei');"/>
+		</td></tr></table></td><td>72.94 +/- 0.45</td></tr>
+
+	<tr><td id="bcuneatusCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Baculites cuneatus</td>
+	    <td align="right">
+		<span id='bcuneatusPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('bcuneatusImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('bcuneatus');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+	
+	<tr><td id="bcompressusCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Baculites compressus</td>
+	    <td align="right">
+		<span id='bcompressusPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('bcompressusImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('bcompressus');"/>
+		</td></tr></table></td><td>73.52 +/- 0.39</td></tr>
+	
+	<tr><td id="dcheyennenseCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Didymoceras cheyennense</td>
+	    <td align="right">
+		<span id='dcheyennensePhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('dcheyennenseImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('dcheyennense');"/>
+		</td></tr></table></td><td>74.67 +/- 0.15</td></tr>
+
+	<tr><td class="species">Exiteloceras jennyi</td><td>75.08 +/- 0.11</td></tr>
+	<tr><td class="species">Didymoceras stevensoni</td><td>&nbsp;</td></tr>
+
+	<tr><td id="dnebrascenseCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Didymoceras nebrascense</td>
+	    <td align="right">
+		<span id='dnebrascensePhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('dnebrascenseImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('dnebrascense');"/>
+		</td></tr></table></td><td>75.19 +/- 0.28</td></tr>
+
+	<tr><td rowspan="8">Middle</td>
+	    <td id="bscottiCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Baculites scotti</td>
+	    <td align="right">
+		<span id='bscottiPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('bscottiImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('bscotti');"/>
+		</td></tr></table></td><td>75.56 +/- 0.11<br/>75.84 +/- 0.26</td></tr>
+
+	<tr><td class="species">Baculites reduncas</td><td>&nbsp;</td></tr>
+	<tr><td class="species">Baculites gregoryensis</td><td>&nbsp;</td></tr>
+
+	<tr><td id="bperplexusCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Baculites perplexus</td>
+	    <td align="right">
+		<span id='bperplexusPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('bperplexusImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('bperplexus');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+
+	<tr><td class="species">Baculites sp.<span style="font-style: normal">(smooth)</span></td><td>&nbsp;</td></tr>
+
+	<tr><td id="basperiformisCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Baculites asperiformis</td>
+	    <td align="right">
+		<span id='basperiformisPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('basperiformisImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('basperiformis');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+
+	<tr><td class="species">Baculites mcclearni</td><td>&nbsp;</td></tr>
+
+	<tr><td id="bobtususCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Baculites obtusus</td>
+	    <td align="right">
+		<span id='bobtususPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('bobtususImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('bobtusus');"/>
+		</td></tr></table></td><td>80.58 +/- 0.55</td></tr>
+
+	<tr><td rowspan="6">Lower</td>
+	    <td class="species">Baculites sp.<span style="font-style: normal">week flank ribs</td><td>&nbsp;</td></tr>
+	<tr><td class="species">Baculites sp.<span style="font-style: normal;">(smooth)</td><td>&nbsp;</td></tr>
+	<tr><td class="species">Scaphites hippocrepis III</td><td>&nbsp;</td></tr>
+
+	<tr><td id="shippocrepisCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Scaphites hippocrepis II</td>
+	    <td align="right">
+		<span id='shippocrepisPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('shippocrepisImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('shippocrepis');"/>
+		</td></tr></table></td><td>81.86 +/- 0.36</td></tr>
+
+	<tr><td class="species">Scaphites hippocrepis I</td><td>&nbsp;</td></tr>
+	<tr><td class="species">Scaphites leei</td><td>&nbsp;</td></tr>
+	<tr><td colspan="3" align="center" style="background-color: #aaaaff">Santonian: 85.8 +/- 0.7 to 83.5 +/- 0.7</td></tr>
+
+	<tr><td rowspan="3">Upper</td>
+	    <td id="dbassleriCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Desmoscaphites bassleri</td>
+	    <td align="right">
+		<span id='dbassleriPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('dbassleriImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('dbassleri');"/>
+		</td></tr></table></td><td>84.30 +/- 0.34</td></tr>
+
+	<tr><td class="species">Desmoscaphites erdmanni</td><td>&nbsp;</td></tr>
+
+	<tr><td id="cchoteauensisCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Clioscaphites choteauensis</td>
+	    <td align="right">
+		<span id='cchoteauensisPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('cchoteauensisImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('cchoteauensis');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+	
+	<tr><td>Middle</td>
+	    <td id="cvermiformisCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Clioscaphites vermiformis</td>
+	    <td align="right">
+		<span id='cvermiformisPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('cvermiformisImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('cvermiformis');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+	
+	<tr><td>Lower</td>
+	    <td id="csaxitonianusCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Clioscaphites saxitonianus</td>
+	    <td align="right">
+		<span id='csaxitonianusPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('csaxitonianusImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('csaxitonianus');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+
+	<tr><td colspan="3" align="center" style="background-color: #aaaaff">Coniacian: 89.3 +/- 1.0 to 85.8 +/- 0.7</td></tr>
+
+	<tr><td>Upper</td>
+	    <td id="sdepressusCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Scaphites depressus</td>
+	    <td align="right">
+		<span id='sdepressusPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('sdepressusImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('sdepressus');"/>
+		</td></tr></table></td><td>87.14 +/- 0.39</td></tr>
+	
+	<tr><td>Middle</td>
+	    <td id="sventricosusCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Scaphites ventricosus</td>
+	    <td align="right">
+		<span id='sventricosusPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('sventricosusImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('sventricosus');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+
+	<tr><td>Lower</td><td class="species">Scaphites preventricosus</td><td>&nbsp;</td></tr>
+	<tr><td colspan="3" align="center" style="background-color: #aaaaff">Turonian: 93.5 +/- 0.3 to 89.3 +/- 1.0</td></tr>
+	<tr><td rowspan="4">Upper</td><td class="species">Scaphites mariasensis</td><td>&nbsp;</td></tr>
+
+	<tr><td id="pgermari_quadratusCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Prionocyclus germari</td>
+	    <td align="right">
+		<span id='pgermari_quadratusPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('pgermari_quadratusImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('pgermari_quadratus');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+	
+	<tr><td class="species">Scaphites nigricollensis</td><td>&nbsp;</td></tr>
+
+	<tr><td id="swhitfieldiCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Scaphites whitfieldi</td>
+	    <td align="right">
+		<span id='swhitfieldiPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('swhitfieldiImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('swhitfieldi');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+
+	<tr><td rowspan="6">Middle</td>
+        <td id="sferronensisCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Scaphites ferronensis</td>
+	    <td align="right">
+		<span id='sferronensisPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('sferronensisImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('sferronensis');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+
+	<tr><td id="swarreniCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Scaphites warreni</td>
+	    <td align="right">
+		<span id='swarreniPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('swarreniImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('swarreni');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+
+	<tr><td class="species">Prionocyclus macombi</td><td>90.21 +/- 0.54</td></tr>
+
+	<tr><td id="phyattiCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Prionocyclus hyatti</td>
+	    <td align="right">
+		<span id='phyattiPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('phyattiImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('phyatti');"/>
+		</td></tr></table></td><td>92.46 +/- 0.58</td></tr>
+
+	<tr><td class="species">Collignoniceras praecox</td><td>&nbsp;</td></tr>
+
+	<tr><td id="cwoollgariCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Collignoniceras woollgari</td>
+	    <td align="right">
+		<span id='cwoollgariPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('cwoollgariImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('cwoollgari');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+
+	<tr><td rowspan="4">Lower</td><td class="species">Mammites nodosoides</td><td>&nbsp;</td></tr>
+
+	<tr><td id="vbirchbyiCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Vascoceras birchbyi</td>
+	    <td align="right">
+		<span id='vbirchbyiPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('vbirchbyiImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('vbirchbyi');"/>
+		</td></tr></table></td><td>93.48 +/- 0.58</td></tr>
+
+	<tr><td class="species">Pseudaspidoceras flexuosum</td><td>93.19 +/- 0.42</td></tr>
+	<tr><td class="species">Watinoceras devonense</td><td>&nbsp;</td></tr>
+	<tr><td colspan="3" align="center" style="background-color: #aaaaff">Cenomanian: 99.6 +/- 0.9 to 93.5 +/- 0.3</td></tr>
+	<tr><td rowspan="9">Upper</td><td class="species">Nigericeras scotti</td><td>&nbsp;</td></tr>
+
+	<tr><td id="njuddiiCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Neocardioceras juddii</td>
+	    <td align="right">
+		<span id='njuddiiPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('njuddiiImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('njuddii');"/>
+		</td></tr></table></td><td>93.83 +/- 0.38<br/>93.19 +/- 0.42</td></tr>
+
+	<tr><td class="species">Burroceras clydense</td><td>&nbsp;</td></tr>
+	<tr><td class="species">Euomphaloceras septemseriatum</td><td>93.68 +/- 0.50</td></tr>
+	<tr><td class="species">Vascoceras diartianum</td><td>93.99 +/- 0.72</td></tr>
+
+	<tr><td id="dconditumCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Dunveganoceras conditum</td>
+	    <td align="right">
+		<span id='dconditumPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('dconditumImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('dconditum');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+
+	<tr><td id="dalbertenseCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Dunveganoceras albertense</td>
+	    <td align="right">
+		<span id='dalbertensePhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('dalbertenseImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('dalbertense');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+
+	<tr><td class="species">Dunveganoceras problematicum</td><td>&nbsp;</td></tr>
+
+	<tr><td id="dpondiCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Dunveganoceras pondi</td>
+	    <td align="right">
+		<span id='dpondiPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('dpondiImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('dpondi');"/>
+		</td></tr></table></td><td>94.71 +/- 0.49</td></tr>
+
+	<tr><td rowspan="6">Middle</td>
+	    <td id="pwyomingenseCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Plesiacanthoceras wyomingense</td>
+	    <td align="right">
+		<span id='pwyomingensePhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('pwyomingenseImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('pwyomingense');"/>
+		</td></tr></table></td>
+		<td>&nbsp;</td></tr>
+
+	<tr><td id="aamphibolumCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Acanthoceras amphibolum</td>
+	    <td align="right">
+		<span id='aamphibolumPhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('aamphibolumImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('aamphibolum');"/>
+		</td></tr></table></td><td>94.96 +/- 0.50</td></tr>
+
+	<tr><td class="species">Acanthoceras bellense</td><td>&nbsp;</td></tr>
+	
+	<tr><td id="amuldoonenseCell">
+	    <table border="0" width="100%"><tr><td align="left" class="species">Acanthoceras muldoonense</td>
+	    <td align="right">
+		<span id='amuldoonensePhotos' style="visibility: hidden">
+		<img src="images/camera-flat.png" height="15px" class="imgLink"
+			 onClick="document.getElementById('amuldoonenseImgs').click()"; /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('amuldoonense');"/>
+		</td></tr></table></td><td>&nbsp;</td></tr>
+
+	<tr><td class="species">Acanthoceras granerosense</td><td>&nbsp;</td></tr>
+	<tr><td class="species">Conlinoceras tarrantense</td><td>95.73 +/- 0.61</td></tr>
+    </table>
+</div>
+
+<div id="mapArea">Map area</div>
+<div id="infoLabel">Denver Mesozoic Locality</div>
+<div id="infoArea">Hints:<br/><br/>Click on the map icon <img src='images/map-icon.png' height='20px'> next to an index fossil name to see the shoreline for that fossil and time. You can open more than one shoreline at one time to see how the Western Interior Seaway grew (transgression) and shrank (regression) over its life time.<br/><br/>
+The active shoreline also shows the localities from which fossils were collected. <br/>
+Click on a location marker <img src='images/marker.jpg' height='30px'> to see information about fossils collected.
+</div>
+<div id="lithoLabel">Formations Recorded</div>
+<div id="lithoArea">Hints:<br/><br/>Click on the camera icon <img src='images/camera-flat.png' height='20px'> to see pictures of specimens.
+</div>
+
+
+
+<!--jquery scripts go here -->
+<script>
+// Initialize map and call tile layer from OSM
+var southWest = L.latLng(25,-118.0);
+northEast = L.latLng(52.0,-95.0);
+bounds = L.latLngBounds(southWest, northEast);
+
+var map = L.map('mapArea',{
+    center: [36.78, -105.12],
+    zoom: 5,
+    maxBounds: bounds
+});
+
+var t = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+$(document).ready(function() {$('.fancybox').fancybox();});
+
+</script>
+
+<style type="text/css">
+	.fancybox-custom .fancybox-skin {
+		box-shadow: 0 0 50px #222;
+	}
+
+</style>
+
+<script type="text/javascript" src="scripts/shorelines.js"></script>
+<script type="text/javascript" src="scripts/shorelineVectors.js"></script>
+
+<script src="markerData/aamphibolum.js"></script>
+<script src="markerData/amuldoonense.js"></script>
+<script src="markerData/basperiformis.js"></script>
+<script src="markerData/bbaculus.js"></script>
+<script src="markerData/bclinolobatus.js"></script>
+<script src="markerData/bcompressus.js"></script>
+<script src="markerData/bcuneatus.js"></script>
+<script src="markerData/bgrandis.js"></script>
+<script src="markerData/bjenseni.js"></script>
+<script src="markerData/bobtusus.js"></script>
+<script src="markerData/bperplexus.js"></script>
+<script src="markerData/breesidei.js"></script>
+<script src="markerData/bscotti.js"></script>
+<script src="markerData/cchoteauensis.js"></script>
+<script src="markerData/csaxitonianus.js"></script>
+<script src="markerData/cvermiformis.js"></script>
+<script src="markerData/cwoollgari.js"></script>
+<script src="markerData/dalbertense.js"></script>
+<script src="markerData/dbassleri.js"></script>
+<script src="markerData/dcheyennense.js"></script>
+<script src="markerData/dconditum.js"></script>
+<script src="markerData/dnebrascense.js"></script>
+<script src="markerData/dpondi.js"></script>
+<script src="markerData/njuddii.js"></script>
+<script src="markerData/pgermari.js"></script>
+<script src="markerData/phyatti.js"></script>
+<script src="markerData/pwyomingense.js"></script>
+<script src="markerData/sdepressus.js"></script>
+<script src="markerData/sferronensis.js"></script>
+<script src="markerData/shippocrepis.js"></script>
+<script src="markerData/sventricosus.js"></script>
+<script src="markerData/swarreni.js"></script>
+<script src="markerData/swhitfieldi.js"></script>
+<script src="markerData/vbirchbyi.js"></script>
+<script src="rocks/rocks.js"></script>
+<script language="javascript">alert("Software is provisional and subject to revision until it has been thoroughly reviewed and received final approval. Provisional software may be inaccurate or contain errors due to an iterative development process. Subsequent review based on automated and human testing may result in significant revisions to the software. Users are cautioned to consider carefully the provisional nature of the software before using it for decisions that concern personal or public safety or the conduct of business that involves substantial monetary or operational consequences. Information concerning the accuracy and appropriate uses of the software may be obtained from the USGS.");</script>
+</body>
+</html>
