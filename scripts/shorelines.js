@@ -22,33 +22,33 @@ function iconClick(f){              // f is the fossil for the icon in the chron
             map.removeLayer(shoreLib[currentLine].markers);
             shoreLib[currentLine].shoreline.setStyle({color:"#4682B4"});
             document.getElementById(currentLine + "Cell").style = "background-color: #D4E4F3";
-            document.getElementById(currentLine + "Photos").style = "visibility: hidden";
+//            document.getElementById(currentLine + "Photos").style = "visibility: hidden";
         }       
         currentLine = f;  // the selected line becomes current
         lineList.push(currentLine);  // put the currentline on the line list
         shoreLib[currentLine].shoreline.addTo(map);  // put the currentline on the map
         shoreLib[currentLine].shoreline.setStyle({color:"#000000"});  // highlight the current line
         shoreLib[currentLine].markers.addTo(map);  // add markers for the index fossil
-        document.getElementById("infoArea").innerHTML = renderInfo(shoreLib[currentLine].initInfo); // prime the infoArea
+        document.getElementById("localityInfo").innerHTML = renderInfo(shoreLib[currentLine].initInfo); // prime the localityInfo
         document.getElementById("lithoArea").innerHTML = shoreLib[currentLine].gallery + shoreLib[currentLine].rocks;
-        if (shoreLib[currentLine].gallery != '') {
-            document.getElementById(currentLine + "Photos").style = "visibility: visible";
-        }
+//        if (shoreLib[currentLine].gallery != '') {
+//            document.getElementById(currentLine + "Photos").style = "visibility: visible";
+//        }
         document.getElementById(currentLine + "Cell").style = "background-color: #AAAAAA";
     }
     else {
         if (f == currentLine) {                  // turn off currentline
             map.removeLayer(shoreLib[f].markers)
-            document.getElementById("infoArea").innerHTML = "";
+            document.getElementById("localityInfo").innerHTML = "";
             document.getElementById("lithoArea").innerHTML = "";
-            document.getElementById(currentLine + "Photos").style = "visibility: hidden";
+//            document.getElementById(currentLine + "Photos").style = "visibility: hidden";
             currentLine = '';
         }                                        // turn off line and clean up
         map.removeLayer(shoreLib[f].shoreline);
         document.getElementById(f + "Cell").style = "background-color: #FFFFFF";
         lineList.splice(lineList.indexOf(f),1);    // remove the selected handle from the list of displayed lines
         if (lineList.length < 1) {
-            document.getElementById("infoArea").innerHTML = infoStr;
+            document.getElementById("localityInfo").innerHTML = infoStr;
             document.getElementById("lithoArea").innerHTML = lithoStr;
         }
     }
@@ -62,20 +62,27 @@ function lineClick(h){                       // click line displayed on map, h i
     {
         map.removeLayer(shoreLib[currentLine].markers);
         shoreLib[currentLine].shoreline.setStyle({color:"#4682B4"});
-        document.getElementById(currentLine + "Photos").style = "visibility: hidden";
+//        document.getElementById(currentLine + "Photos").style = "visibility: hidden";
         document.getElementById(currentLine + "Cell").style = "background-color: #D4E4F3"
     }
     currentLine = h;
     shoreLib[currentLine].shoreline.setStyle({color:"#000000"});  // highlight the current line
     document.getElementById(currentLine + "Cell").style = "background-color: #AAAAAA";
     shoreLib[currentLine].markers.addTo(map);  // add markers for the index fossil
-    document.getElementById("infoArea").innerHTML = renderInfo(shoreLib[currentLine].initInfo);
+    document.getElementById("localityInfo").innerHTML = renderInfo(shoreLib[currentLine].initInfo);
+    
+    // load the gallery markup.
     document.getElementById("lithoArea").innerHTML = shoreLib[currentLine].gallery + shoreLib[currentLine].rocks;
-    if (shoreLib[currentLine].gallery != '') {
-        document.getElementById(currentLine + "Photos").style = "visibility: visible";
-    }
+//    if (shoreLib[currentLine].gallery != '') {
+//        document.getElementById(currentLine + "Photos").style = "visibility: visible";
+//    }
 }
-  
+
+function photoClick(h) {
+    document.getElementById("gallery").innerHTML = shoreLib[h].gallery;
+    document.getElementById(h+"Imgs").click();
+}
+
 function MarkerLib() {
 }
 // Named-index array of all marker objects, icons, and text content
@@ -97,7 +104,7 @@ function makeMarker(d,lt,ln) {
 
 function showMarker(e) {  // event comes in
     var d = e.target.options.title  // pull out the title which is the Dnum
-    document.getElementById("infoArea").innerHTML = renderInfo(d);
+    document.getElementById("localityInfo").innerHTML = renderInfo(d);
 }
 
 function renderInfo(d) {

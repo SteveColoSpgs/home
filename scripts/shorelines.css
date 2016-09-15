@@ -101,15 +101,10 @@ body{
 	background-image: url("../images/tepeeButtes.png");
 }
 
-footer {
-	position: absolute;
-	top: 620px;
-	width: 100%;
-    background-color:blue;
-    text-align:center;
-	font: 12pt "Trebuchet MS", sans-serif;
-    background-color:blue;
-    color:white;
+#gallery {
+	height: 0;
+	width: 0;
+	visibility: hidden;
 }
 
 table {
