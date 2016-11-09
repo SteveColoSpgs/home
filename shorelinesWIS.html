@@ -27,6 +27,11 @@
 <div id="banner">
 	<img src="images/usgs-logo-transparent-c441c993877f1614030c0ec51ba4556f.png" alt="usgs-logo" style="width:178px;height:72px;"/>
 	Western Interior Seaway Shorelines (provisional proof of concept)
+	<span style="font-size: 8pt" id="version"></span>
+</div>
+
+<div id="wait">
+  <div class="loader"></div>
 </div>
 
 <div id="index">
@@ -417,6 +422,7 @@
 </div>
 </div> <!--main-->
 
+
 <!--jquery scripts go here -->
 <script>
 // Initialize map and call tile layer from OSM
@@ -483,6 +489,10 @@ $(document).ready(function() {$('.fancybox').fancybox();});
 <script src="markerData/swhitfieldi.js"></script>
 <script src="markerData/vbirchbyi.js"></script>
 <script src="rocks/rocks.js"></script>
+
 <script language="javascript">alert("Software is provisional and subject to revision until it has been thoroughly reviewed and received final approval. Provisional software may be inaccurate or contain errors due to an iterative development process. Subsequent review based on automated and human testing may result in significant revisions to the software. Users are cautioned to consider carefully the provisional nature of the software before using it for decisions that concern personal or public safety or the conduct of business that involves substantial monetary or operational consequences. Information concerning the accuracy and appropriate uses of the software may be obtained from the USGS.");</script>
+
+<script src="scripts/objHandler.js"></script>
+
 </body>
 </html>

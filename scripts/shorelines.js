@@ -1,3 +1,82 @@
+document.getElementById("version").innerHTML="v0.7a";
+
+// All enabled shorelines by handle
+var handles = new Array;
+//handles[66]="jnebrascensis";
+//handles[65]="hnicolletii";
+//handles[64]="hbirkelundae";
+handles[63]="bclinolobatus";
+handles[62]="bgrandis";
+handles[61]="bbaculus";
+
+//handles[60]="beliasi";
+handles[59]="bjenseni";
+handles[58]="breesidei";
+handles[57]="bcuneatus";
+handles[56]="bcompressus";
+handles[55]="dcheyennense";
+//handles[54]="ejennyi";
+//handles[53]="dstevensoni";
+handles[52]="dnebrascense";
+handles[51]="bscotti";
+
+//handles[50]="breduncus";
+//handles[49]="bgregoryensis";
+handles[48]="bperplexus";
+//handles[47]="bspsmooth";
+handles[46]="basperiformis";
+//handles[45]="bmaclearni";
+handles[44]="bobtusus";
+//handles[43]="bspweak";
+//handles[42]="bspsmooth";
+
+
+handles[40]="shippocrepis";
+
+//handles[38]="sleei";
+handles[37]="dbassleri";
+//handles[36]="derdmanni";
+handles[35]="cchoteauensis";
+handles[34]="cvermiformis";
+handles[33]="csaxitonianus";
+handles[32]="sdepressus";
+handles[31]="sventricosus";
+
+//handles[30]="spreventricosus";
+//handles[29]="smariasensis";
+handles[28]="pgermari";
+//handles[27]="snigricollensis";
+handles[26]="swhitfieldi";
+handles[25]="sferronensis";
+handles[24]="swarreni";
+//handles[23]="pmacombi";
+handles[22]="phyatti";
+//handles[21]="cpraecox";
+
+handles[20]="cwoollgari";
+//handles[19]="mnodosoides";
+handles[18]="vbirchbyi";
+//handles[17]="pflexuosum";
+//handles[16]="wdevonense";
+//handles[15]="nscotti";
+handles[14]="njuddii";
+//handles[13]="bclydense";
+//handles[12]="esptemseriatum";
+//handles[11]="vdiartianum";
+
+handles[10]="dconditum";
+handles[9]="dalbertense";
+//handles[8]="dproblematicum";
+handles[7]="dpondi";
+handles[6]="pwyomingense";
+handles[5]="amphibolum";
+//handles[4]="abellense";
+handles[3]="amuldoonense";
+//handles[2]="agranerosense";
+//handles[1]="ctarrantense";
+
+//alert('test ' + handles[41]);
+
 var currentLine = ''; // handle of currently selected line
 var lineList = [];    // list of displayed shoreline handles
 var markersOn = '';   // markers displayed for currentLine
@@ -80,17 +159,18 @@ function lineClick(h){                       // click line displayed on map, h i
 
 function photoClick(h) {
     document.getElementById("gallery").innerHTML = shoreLib[h].gallery;
-    document.getElementById(h+"Imgs").click();
+    document.getElementById(h + "Imgs").click();
 }
 
 function MarkerLib() {
 }
 // Named-index array of all marker objects, icons, and text content
 // index is Dnum, eg  D29, D7456
-// values loaded in separate .js file
 // marker content loaded as json
 var markerLib = new MarkerLib();
 
+// marker made with dnum, latitude, and longitude
+// returns marker object
 function makeMarker(d,lt,ln) {
     //make Icon 
     var iHtml = '<img src="images/smallRedDot.png"/>' + d;
@@ -107,6 +187,7 @@ function showMarker(e) {  // event comes in
     document.getElementById("localityInfo").innerHTML = renderInfo(d);
 }
 
+// render field notes, relevant data of locality and what was collected
 function renderInfo(d) {
     var iStr = '<table border=1 style="font-family:Arial,Verdana,Times;font-size:10px;text-align:left;width:100%;border-spacing:0px;padding:3px">';
     iStr += '<tbody style="background-color:white"><tr bgcolor="#D4E4F3">';
@@ -126,6 +207,7 @@ function renderInfo(d) {
     return iStr;
 }
 
+/*
 function RocksFormation() {
     this.dnum = '';   // dnum string
     this.formation = '';  //formation string
@@ -145,6 +227,7 @@ function RocksFossil() {
     this.name = ''; //handle
     this.states = []; //array of rocksState
 }
+*/
 
 var allRocks = ''; // string for simple table of rocks
 function updateRocks(d) {
