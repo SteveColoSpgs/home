@@ -1,0 +1,191 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-fixed-top {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
+    0 3px 1px -2px rgba(0,0,0,.2),
+    0 1px 5px 0 rgba(0,0,0,.12);
+  border-bottom: 0;
+}
+
+div.navbar-brand{
+  padding:0;
+  font-size:21px;
+}
+
+.main-container {
+  position: absolute;
+  top: 51px;
+  bottom: 150px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.map {
+  width: 60%;
+  height: 100%;
+  position: relative;
+}
+
+.sidebar {
+  width: 40%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  padding: 1em;
+  box-shadow: -2px 0 2px 0 rgba(0,0,0,.2);
+  background-color: #f5f5f5;
+}
+
+.card {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  background-color: white;
+  margin-bottom: 1.5em;
+  position:relative;
+}
+
+.card .card-title {
+  border-bottom: 1px solid #dddddd;
+  padding: 15px;
+}
+
+.card .card-title h2 {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+.card .card-body {
+  padding: 15px;
+}
+
+.chart-container {
+  margin: 0 0 3% 3%;
+}
+
+.label-container {
+  position: absolute;
+  font-size:.9vw;
+}
+
+.y-axis-label {
+  top:65%;
+  margin:-7px;
+}
+
+.card .card-y-axis-label {
+  transform: rotate(270deg);
+  float: left;
+  transform-origin: 10%;
+}
+
+.card .card-x-axis-label {
+  width: 90%;
+  text-align: center;
+  margin-top: -15px;
+}
+
+/*CartoDB CSS overrides */
+.cartodb-popup .cartodb-popup-header {
+  max-height: none !important;
+}
+
+.cartodb-popup .cartodb-popup-header h4 {
+  display: none;
+}
+
+div.cartodb-layer-selector-box div.cartodb-dropdown ul li a.layer {
+  width:275px;
+}
+
+.cartodb-map-wrapper .cartodb-layer-selector-box, div.cartodb-searchbox {
+  top:190px;
+  z-index:11;
+}
+
+/* end CartoDB overrides */
+
+#damyear-legend {
+  margin: 5px;
+  width: 29%;
+  font-size: 0.75vw;
+}
+
+.right-legend {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 182px;
+  z-index: 3;
+  background-color: white;
+  padding: 1em 1em .5em;
+  border-radius: 4px;
+  margin: 20px;
+  border: 1px solid #999;
+  box-shadow: rgba(0,0,0,.2) 0 0 4px 2px;
+  font-size: .9em;
+}
+
+/* Match similar styles to cartodb */
+.bar-legend {
+  list-style: none;
+  padding:0;
+}
+
+.bar-legend li .bullet {
+  float:left;
+  margin: 5px 5px 0 0;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  padding:2px;
+  border: 1px solid rgba(0,0,0,.2);
+}
+
+.cartodb-searchbox.right-legend {
+  display:block;
+  top:150px;
+  width:162px;
+}
+/* End of cartodb style */
+
+.jspHorizontalBar {
+  visibility: hidden;
+}
+
+.data-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  font-size: .9em;
+  box-shadow: -2px 0 2px 0 rgba(0,0,0,.2);
+  overflow: hidden;
+}
+
+.data-panel .dt-bootstrap {
+  margin-top: -8px;
+}
+
+.data-panel td {
+  white-space: nowrap;
+  max-width: 250px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.modal-about {
+  /*width: 750px;*/
+}

@@ -74,6 +74,7 @@ body{
 }
 
 #lithoLabel {
+
 	top: 56%;
 	height: 4%;
 	width: 100%;
@@ -100,6 +101,7 @@ body{
 	font: 10pt sans-serif;
 	background-image: url("../images/tepeeButtes.png");
 }
+
 
 #gallery {
 	height: 0;
