@@ -1,8 +1,7 @@
-document.getElementById("version").innerHTML="v0.7a";
-
 // All enabled shorelines by handle
 var handles = new Array;
 //handles[66]="jnebrascensis";
+
 //handles[65]="hnicolletii";
 //handles[64]="hbirkelundae";
 handles[63]="bclinolobatus";
@@ -30,7 +29,6 @@ handles[44]="bobtusus";
 //handles[43]="bspweak";
 //handles[42]="bspsmooth";
 
-
 handles[40]="shippocrepis";
 
 //handles[38]="sleei";
@@ -47,7 +45,6 @@ handles[31]="sventricosus";
 handles[28]="pgermari";
 //handles[27]="snigricollensis";
 handles[26]="swhitfieldi";
-handles[25]="sferronensis";
 handles[24]="swarreni";
 //handles[23]="pmacombi";
 handles[22]="phyatti";
@@ -69,13 +66,11 @@ handles[9]="dalbertense";
 //handles[8]="dproblematicum";
 handles[7]="dpondi";
 handles[6]="pwyomingense";
-handles[5]="amphibolum";
+handles[5]="aamphibolum";
 //handles[4]="abellense";
 handles[3]="amuldoonense";
 //handles[2]="agranerosense";
 //handles[1]="ctarrantense";
-
-//alert('test ' + handles[41]);
 
 var currentLine = ''; // handle of currently selected line
 var lineList = [];    // list of displayed shoreline handles
@@ -101,7 +96,6 @@ function iconClick(f){              // f is the fossil for the icon in the chron
             map.removeLayer(shoreLib[currentLine].markers);
             shoreLib[currentLine].shoreline.setStyle({color:"#4682B4"});
             document.getElementById(currentLine + "Cell").style = "background-color: #D4E4F3";
-//            document.getElementById(currentLine + "Photos").style = "visibility: hidden";
         }       
         currentLine = f;  // the selected line becomes current
         lineList.push(currentLine);  // put the currentline on the line list
@@ -109,10 +103,7 @@ function iconClick(f){              // f is the fossil for the icon in the chron
         shoreLib[currentLine].shoreline.setStyle({color:"#000000"});  // highlight the current line
         shoreLib[currentLine].markers.addTo(map);  // add markers for the index fossil
         document.getElementById("localityInfo").innerHTML = renderInfo(shoreLib[currentLine].initInfo); // prime the localityInfo
-        document.getElementById("lithoArea").innerHTML = shoreLib[currentLine].gallery + shoreLib[currentLine].rocks;
-//        if (shoreLib[currentLine].gallery != '') {
-//            document.getElementById(currentLine + "Photos").style = "visibility: visible";
-//        }
+        document.getElementById("lithoArea").innerHTML = shoreLib[currentLine].gallery + shoreLib[currentLine].rocksTable();
         document.getElementById(currentLine + "Cell").style = "background-color: #AAAAAA";
     }
     else {
@@ -120,7 +111,6 @@ function iconClick(f){              // f is the fossil for the icon in the chron
             map.removeLayer(shoreLib[f].markers)
             document.getElementById("localityInfo").innerHTML = "";
             document.getElementById("lithoArea").innerHTML = "";
-//            document.getElementById(currentLine + "Photos").style = "visibility: hidden";
             currentLine = '';
         }                                        // turn off line and clean up
         map.removeLayer(shoreLib[f].shoreline);
@@ -134,27 +124,25 @@ function iconClick(f){              // f is the fossil for the icon in the chron
 }
 
 function lineClick(h){                       // click line displayed on map, h is the handle for the fossil
+
     if (h == currentLine) {
-        return;
+        return;  // currentLine is active, so do nothing
     }
-    else
+    else  // line is not currentLine
     {
-        map.removeLayer(shoreLib[currentLine].markers);
-        shoreLib[currentLine].shoreline.setStyle({color:"#4682B4"});
-//        document.getElementById(currentLine + "Photos").style = "visibility: hidden";
-        document.getElementById(currentLine + "Cell").style = "background-color: #D4E4F3"
-    }
+        if (currentLine != '') {  // disable the currentLine markers and lighten the line and cell
+            map.removeLayer(shoreLib[currentLine].markers);
+            shoreLib[currentLine].shoreline.setStyle({color:"#4682B4"});
+            document.getElementById(currentLine + "Cell").style = "background-color: #D4E4F3"
+        }
+    } 
+        // make currentLine h and highlight
     currentLine = h;
     shoreLib[currentLine].shoreline.setStyle({color:"#000000"});  // highlight the current line
-    document.getElementById(currentLine + "Cell").style = "background-color: #AAAAAA";
+    document.getElementById(currentLine + "Cell").style = "background-color: #AAAAAA";  // highlight the cell to match
     shoreLib[currentLine].markers.addTo(map);  // add markers for the index fossil
-    document.getElementById("localityInfo").innerHTML = renderInfo(shoreLib[currentLine].initInfo);
-    
-    // load the gallery markup.
-    document.getElementById("lithoArea").innerHTML = shoreLib[currentLine].gallery + shoreLib[currentLine].rocks;
-//    if (shoreLib[currentLine].gallery != '') {
-//        document.getElementById(currentLine + "Photos").style = "visibility: visible";
-//    }
+    document.getElementById("localityInfo").innerHTML = renderInfo(shoreLib[currentLine].initInfo);  // load the default locality info
+    document.getElementById("lithoArea").innerHTML = shoreLib[currentLine].rocksTable();  // load the resume of rocks for the shoreline
 }
 
 function photoClick(h) {
@@ -162,25 +150,6 @@ function photoClick(h) {
     document.getElementById(h + "Imgs").click();
 }
 
-function MarkerLib() {
-}
-// Named-index array of all marker objects, icons, and text content
-// index is Dnum, eg  D29, D7456
-// marker content loaded as json
-var markerLib = new MarkerLib();
-
-// marker made with dnum, latitude, and longitude
-// returns marker object
-function makeMarker(d,lt,ln) {
-    //make Icon 
-    var iHtml = '<img src="images/smallRedDot.png"/>' + d;
-    var aIcon = L.divIcon({iconSize: [8, 8], iconAnchor: [4,4], className: 'mIcon', html: iHtml});
-    
-    // make Marker
-    var aMarker = L.marker([lt,ln],{icon:aIcon, title: d});
-    aMarker.on('click', showMarker)
-    return aMarker
-}
 
 function showMarker(e) {  // event comes in
     var d = e.target.options.title  // pull out the title which is the Dnum
@@ -192,47 +161,17 @@ function renderInfo(d) {
     var iStr = '<table border=1 style="font-family:Arial,Verdana,Times;font-size:10px;text-align:left;width:100%;border-spacing:0px;padding:3px">';
     iStr += '<tbody style="background-color:white"><tr bgcolor="#D4E4F3">';
     iStr += '<td style="width:50%">Denver Mesozoic Locality</td><td>' + markerLib[d].Dnum + '</td></tr>';
-    iStr += '<tr><td>Index Fossil</td><td>' + markerLib[d].Ifossil + '</td></tr>';
-    iStr += '<tr bgcolor="#D4E4F3"><td valign="top">Resume of Fauna</td><td>' + markerLib[d].resume + '</td></tr>';
-    iStr += '<tr><td>County</td><td>' + markerLib[d].county + '</td></tr>';
-    iStr += '<tr bgcolor="#D4E4F3"><td>State</td><td>' + markerLib[d].state + '</td></tr>';
-    iStr += '<tr><td>Formation</td><td>' + markerLib[d].formation + '</td></tr>';
-    iStr += '<tr bgcolor="#D4E4F3"><td>Member</td><td>' + markerLib[d].member + '</td></tr>';
-    iStr += '<tr><td>Age</td><td>' + markerLib[d].age + '</td></tr>';
-    iStr += '<tr bgcolor="#D4E4F3"><td>Stage</td><td>' + markerLib[d].stage + '</td></tr>';
-    iStr += '<tr><td>Age Date</td><td>' + markerLib[d].ageDate + '</td></tr>';
-    iStr += '<tr bgcolor="#D4E4F3"><td>Collector</td><td>' + markerLib[d].collector + '</td></tr>';
-    iStr += '<tr><td>Date collected</td><td>' + markerLib[d].date + '</td></tr>';
-    iStr += '<tr bgcolor="#D4E4F3"><td>Reference</td><td>' + markerLib[d].reference + '</td></tr></tbody></table>';
+    iStr += '<tr><td>Index Fossil</td><td>' + markerLib[d].Index_Foss + '</td></tr>';
+    iStr += '<tr bgcolor="#D4E4F3"><td valign="top">Resume of Fauna</td><td>' + markerLib[d].Resume_of_ + '</td></tr>';
+    iStr += '<tr><td>County</td><td>' + markerLib[d].County + '</td></tr>';
+    iStr += '<tr bgcolor="#D4E4F3"><td>State</td><td>' + markerLib[d].State + '</td></tr>';
+    iStr += '<tr><td>Formation</td><td>' + markerLib[d].Formation + '</td></tr>';
+    iStr += '<tr bgcolor="#D4E4F3"><td>Member</td><td>' + markerLib[d].Member + '</td></tr>';
+    iStr += '<tr><td>Age</td><td>' + markerLib[d].Age + '</td></tr>';
+    iStr += '<tr bgcolor="#D4E4F3"><td>Stage</td><td>' + markerLib[d].Stage + '</td></tr>';
+    iStr += '<tr><td>Age Date</td><td>' + markerLib[d].Age_Date_M + '</td></tr>';
+    iStr += '<tr bgcolor="#D4E4F3"><td>Collector</td><td>' + markerLib[d].Collector + '</td></tr>';
+    iStr += '<tr><td>Date collected</td><td>' + markerLib[d].Date + '</td></tr>';
+    iStr += '<tr bgcolor="#D4E4F3"><td>Reference</td><td>' + markerLib[d].Reference + '</td></tr></tbody></table>';
     return iStr;
-}
-
-/*
-function RocksFormation() {
-    this.dnum = '';   // dnum string
-    this.formation = '';  //formation string
-}
-
-function RocksCounty() {
-    this.name = '';
-    this.formations = []; //array of rocksformation
-}
-
-function RocksState() {
-    this.name = '';
-    this.counties = []; //array of rocksCounty
-}
-
-function RocksFossil() {
-    this.name = ''; //handle
-    this.states = []; //array of rocksState
-}
-*/
-
-var allRocks = ''; // string for simple table of rocks
-function updateRocks(d) {
-    allRocks += "<tr><td>" + markerLib[d].Dnum + "</td>";
-    allRocks += "<td>" + markerLib[d].state + "</td>";
-    allRocks += "<td>" + markerLib[d].county + "</td>";
-    allRocks += "<td>" + markerLib[d].formation + "</td></tr>";
 }

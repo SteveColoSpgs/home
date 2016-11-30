@@ -262,13 +262,13 @@
 	<tr><td colspan="3" align="center" style="background-color: #aaaaff">Turonian: 93.5 +/- 0.3 to 89.3 +/- 1.0</td></tr>
 	<tr><td rowspan="4">Upper</td><td class="species">Scaphites mariasensis</td><td>&nbsp;</td></tr>
 
-	<tr><td id="pgermari_quadratusCell">
+	<tr><td id="pgermariCell">
 	    <table border="0" width="100%"><tr><td align="left" class="species">Prionocyclus germari</td>
 	    <td align="right">
-		<span id='pgermari_quadratusPhotos' style="visibility: hidden">
+		<span id='pgermariPhotos' style="visibility: hidden">
 		<img src="images/camera-flat.png" height="15px" class="imgLink"
-			 onClick="document.getElementById('pgermari_quadratusImgs').click()" /></span>&nbsp;
-		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('pgermari_quadratus');"/>
+			 onClick="document.getElementById('pgermariImgs').click()" /></span>&nbsp;
+		<img src="images/map-icon.png" height="15px" class="imgLink" onclick="iconClick('pgermari');"/>
 		</td></tr></table></td><td>&nbsp;</td></tr>
 	
 	<tr><td class="species">Scaphites nigricollensis</td><td>&nbsp;</td></tr>
@@ -459,46 +459,20 @@ $(document).ready(function() {$('.fancybox').fancybox();});
 
 <script type="text/javascript" src="scripts/shorelines.js"></script>
 <script type="text/javascript" src="scripts/shorelineVectors.js"></script>
-
-<script src="markerData/aamphibolum.js"></script>
-<script src="markerData/amuldoonense.js"></script>
-<script src="markerData/basperiformis.js"></script>
-<script src="markerData/bbaculus.js"></script>
-<script src="markerData/bclinolobatus.js"></script>
-<script src="markerData/bcompressus.js"></script>
-<script src="markerData/bcuneatus.js"></script>
-<script src="markerData/bgrandis.js"></script>
-<script src="markerData/bjenseni.js"></script>
-<script src="markerData/bobtusus.js"></script>
-<script src="markerData/bperplexus.js"></script>
-<script src="markerData/breesidei.js"></script>
-<script src="markerData/bscotti.js"></script>
-<script src="markerData/cchoteauensis.js"></script>
-<script src="markerData/csaxitonianus.js"></script>
-<script src="markerData/cvermiformis.js"></script>
-<script src="markerData/cwoollgari.js"></script>
-<script src="markerData/dalbertense.js"></script>
-<script src="markerData/dbassleri.js"></script>
-<script src="markerData/dcheyennense.js"></script>
-<script src="markerData/dconditum.js"></script>
-<script src="markerData/dnebrascense.js"></script>
-<script src="markerData/dpondi.js"></script>
-<script src="markerData/njuddii.js"></script>
-<script src="markerData/pgermari.js"></script>
-<script src="markerData/phyatti.js"></script>
-<script src="markerData/pwyomingense.js"></script>
-<script src="markerData/sdepressus.js"></script>
-<script src="markerData/sferronensis.js"></script>
-<script src="markerData/shippocrepis.js"></script>
-<script src="markerData/sventricosus.js"></script>
-<script src="markerData/swarreni.js"></script>
-<script src="markerData/swhitfieldi.js"></script>
-<script src="markerData/vbirchbyi.js"></script>
-<script src="rocks/rocks.js"></script>
-
-<script language="javascript">alert("Software is provisional and subject to revision until it has been thoroughly reviewed and received final approval. Provisional software may be inaccurate or contain errors due to an iterative development process. Subsequent review based on automated and human testing may result in significant revisions to the software. Users are cautioned to consider carefully the provisional nature of the software before using it for decisions that concern personal or public safety or the conduct of business that involves substantial monetary or operational consequences. Information concerning the accuracy and appropriate uses of the software may be obtained from the USGS.");</script>
-
 <script src="scripts/objHandler.js"></script>
+<!--script src="rocks/rocks.js"></script-->
+<script language="javascript">
+  paintWait();
+  var alertStr ="Software is provisional and subject to revision until it has been thoroughly reviewed and received final approval. ";
+  alertStr += "Provisional software may be inaccurate or contain errors due to an iterative development process. ";
+  alertStr += "Subsequent review based on automated and human testing may result in significant revisions to the software. ";
+  alertStr += "Users are cautioned to consider carefully the provisional nature of the software before using it for decisions ";
+  alertStr += "that concern personal or public safety or the conduct of business that involves substantial monetary or operational consequences. ";
+  alertStr += "Information concerning the accuracy and appropriate uses of the software may be obtained from the USGS."
+  alert(alertStr);
+  ajax_get(ajaxUrl, buildJSONl);
+  removeWait();
+  </script>
 
 </body>
 </html>
