@@ -1,5 +1,5 @@
-var ajaxUrl = "scripts/l.json"
-//var ajaxUrl = "http://maps.usgs.gov/wis/scripts/l.json"
+//var ajaxUrl = "scripts/l.json"
+var ajaxUrl = "http://maps.usgs.gov/wis/scripts/l.json"
 var data;
 function ajax_get(url, cb) {
 
